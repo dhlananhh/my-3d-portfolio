@@ -1,104 +1,133 @@
-"use client";
+import Link from "next/link"
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import { IoChevronUpCircleSharp } from "react-icons/io5";
-
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/dhlananh",
-    icon: FaLinkedin,
-    ariaLabel: "Connect with me on LinkedIn",
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/dhlananhh",
-    icon: FaGithub,
-    ariaLabel: "Check out my projects on GitHub",
-  },
-  {
-    name: "Email",
-    url: "mailto:dhlananh2309@gmail.com",
-    icon: FaEnvelope,
-    ariaLabel: "Email me",
-  },
-];
-
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
+export default function Footer() {
   return (
-    <motion.footer
-      initial={ { opacity: 0 } }
-      whileInView={ { opacity: 1 } }
-      viewport={ { once: true, amount: 0.1 } }
-      transition={ { duration: 0.8 } }
-      className="bg-black text-gray-400 py-10 sm:py-12"
-    >
-      <div className="container mx-auto px-4">
-        {/* Social Links */ }
-        <div className="flex justify-center items-center space-x-6 mb-6">
-          { socialLinks.map((link) => (
-            <motion.a
-              key={ link.name }
-              href={ link.url }
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={ link.ariaLabel }
-              className="text-gray-400 hover:text-teal-400 transition-colors duration-300"
-              whileHover={ { y: -3, scale: 1.1 } }
-              transition={ { type: "spring", stiffness: 300 } }
+    <footer className="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-1">
+            <Link
+              href="#home"
+              className="text-xl font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent"
             >
-              <link.icon size={ 28 } />
-            </motion.a>
-          )) }
+              Lan Anh
+            </Link>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">
+              Passionate about creating dynamic websites and applications with modern frontend technology.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
+              Navigation
+            </h3>
+            <ul className="space-y-2">
+              { [ "Home", "About", "Projects", "Skills", "Testimonials", "Resume", "Contact" ].map((item) => (
+                <li key={ item }>
+                  <Link
+                    href={ `#${item.toLowerCase()}` }
+                    className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+                  >
+                    { item }
+                  </Link>
+                </li>
+              )) }
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
+              Services
+            </h3>
+            <ul className="space-y-2">
+              { [ "Web Development" ].map((item) => (
+                <li key={ item }>
+                  <Link
+                    href="#"
+                    className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
+                  >
+                    { item }
+                  </Link>
+                </li>
+              )) }
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
+              Contact
+            </h3>
+            <ul className="space-y-2">
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <Mail className="h-4 w-4 mr-2" /> dhlananh2309@gmail.com
+              </li>
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <Twitter className="h-4 w-4 mr-2" /> @ai_developer
+              </li>
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <Github className="h-4 w-4 mr-2" /> github.com/aidev
+              </li>
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <Linkedin className="h-4 w-4 mr-2" /> linkedin.com/in/aidev
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Copyrights */ }
-        <div className="text-sm text-center text-gray-500">
-          <p>© { currentYear } Lan Anh. All rights reserved.</p>
-          <p className="mt-1">
-            Website built with { " " }
-            <Link href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 underline">
-              Next.js
-            </Link> { " " }
-            & { " " }
-            <Link href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 underline">
-              Tailwind CSS
-            </Link>
-            . Hosted on { " " }
-            <Link href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 underline">
-              Vercel
-            </Link>.
-          </p>
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              © { new Date().getFullYear() } AI.Dev. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link
+                href="#"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="#"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="#"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
+                Cookies
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Back to Top Button */ }
-      <motion.button
-        onClick={ scrollToTop }
-        aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50 transition-all duration-300 shadow-lg"
-        whileHover={ { scale: 1.1, rotate: 360 } }
-        whileTap={ { scale: 0.95 } }
-        initial={ { scale: 0, opacity: 0 } }
-        animate={ { scale: 1, opacity: 1 } }
-        exit={ { scale: 0, opacity: 0 } }
-        transition={ { type: "spring", stiffness: 260, damping: 20, rotate: { duration: 0.7 } } }
-      >
-        <IoChevronUpCircleSharp size={ 30 } />
-      </motion.button>
-    </motion.footer>
-  );
-};
-
-export default Footer;
+      {/* Sticky footer with social links */ }
+      <div className="fixed bottom-4 left-4 z-40 flex flex-col space-y-2">
+        <a
+          href="#"
+          className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors"
+          aria-label="GitHub"
+        >
+          <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+        </a>
+        <a
+          href="#"
+          className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors"
+          aria-label="LinkedIn"
+        >
+          <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+        </a>
+        <a
+          href="#"
+          className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors"
+          aria-label="Email"
+        >
+          <Mail className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+        </a>
+      </div>
+    </footer>
+  )
+}
