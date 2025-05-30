@@ -85,13 +85,10 @@ export default function Footer() {
                 <Mail className="h-4 w-4 mr-2" /> dhlananh2309@gmail.com
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">
-                <Twitter className="h-4 w-4 mr-2" /> @ai_developer
+                <Github className="h-4 w-4 mr-2" /> github.com/dhlananhh
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">
-                <Github className="h-4 w-4 mr-2" /> github.com/aidev
-              </li>
-              <li className="flex items-center text-gray-600 dark:text-gray-400">
-                <Linkedin className="h-4 w-4 mr-2" /> linkedin.com/in/aidev
+                <Linkedin className="h-4 w-4 mr-2" /> linkedin.com/in/dhlananh
               </li>
             </ul>
           </div>
