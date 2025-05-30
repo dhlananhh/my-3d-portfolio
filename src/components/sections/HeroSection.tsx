@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -39,19 +39,51 @@ export default function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-green-400 to-blue-600 hover:from-green-700 hover:to-blue-600 text-white font-semibold rounded-lg text-lg shadow-lg"
+            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             <Link href="#projects">
-              View Projects <ArrowRight className="ml-1 h-5 w-5 items-center justify-center" />
+              View Projects <ArrowRight className="ml-1 h-10 w-10 items-center justify-center" />
             </Link>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="text-white font-semibold rounded-lg text-lg shadow-lg hover:scale-105"
+            className="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 hover:scale-105"
           >
             <Link href="#contact">Get in Touch</Link>
+          </Button>
+        </motion.div>
+
+        <motion.div
+          initial={ { opacity: 0 } }
+          animate={ { opacity: 1 } }
+          transition={ { duration: 0.5, delay: 0.6 } }
+          className="mt-10 flex items-center justify-center space-x-6"
+        >
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+          >
+            <Github className="h-10 w-10" />
+            <span className="sr-only">GitHub</span>
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+          >
+            <Linkedin className="h-10 w-10" />
+            <span className="sr-only">LinkedIn</span>
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+          >
+            <Mail className="h-10 w-10" />
+            <span className="sr-only">Email</span>
           </Button>
         </motion.div>
       </div>
