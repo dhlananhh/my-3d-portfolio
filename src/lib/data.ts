@@ -11,7 +11,6 @@ export interface Project {
   slug: string;
   projectStartDate: Date;
   projectStatus: string;
-  isFeatured: boolean;
   liveDemoUrl?: string;
 }
 
@@ -55,23 +54,62 @@ export const projectsData: Project[] = [
     category: "Projects",
     projectStartDate: new Date("2025-05-27"),
     projectStatus: "In Progress",
-    isFeatured: true,
     liveDemoUrl: "https://quickcart-gs.vercel.app/"
   },
   {
     id: "2",
-    title: "Online Bookstore Full-stack Project",
+    title: "Online Bookstore Frontend Project",
     slug: "online-bookstore-project",
     shortDescription: "Online bookstore system, with chatbot integration.",
     description: "This project serves as a final report exam on software architecture. I am a member of this project, as a frontend coder, building and integrating chatbot into the bookstore system.",
     imageUrl: "/images/bookstore-project.png",
     githubUrl: "https://github.com/minhlq2003/bookstore-frontend-nextjs",
-    tools: [ "Next.js", "TailwindCSS", "TypeScript", "Node.js", "Express.js" ],
+    tools: [ "Next.js", "TailwindCSS", "TypeScript" ],
     category: "Projects",
     projectStartDate: new Date("2025-01-11"),
     projectStatus: "Completed",
-    isFeatured: true,
     liveDemoUrl: "https://bookstore-frontend-nextjs.vercel.app/"
+  },
+  {
+    id: "3",
+    title: "Online Bookstore Backend Project",
+    slug: "online-bookstore-project",
+    shortDescription: "Online bookstore system, with chatbot integration.",
+    description: "This project serves as a final report exam on software architecture. I am a member of this project, as a frontend coder, building and integrating chatbot into the bookstore system.",
+    imageUrl: "/images/bookstore-project.png",
+    githubUrl: "https://github.com/HieuTrungMc/bookstore-backend-nodejs",
+    tools: [ "Node.js", "Express.js", "Prisma", "MariaDB" ],
+    category: "Projects",
+    projectStartDate: new Date("2025-01-11"),
+    projectStatus: "Completed",
+  },
+  {
+    id: "4",
+    title: "DeepSeek Clone Full-stack Website Project",
+    slug: "deepseek-clone",
+    shortDescription: "DeepSeek clone website",
+    description: "This project serves as one of my personal projects.",
+    imageUrl: "/images/deepseek-clone-project.png",
+    githubUrl: "https://github.com/dhlananhh/deepseek-clone",
+    tools: [ "Next.js", "TailwindCSS", "TypeScript" ],
+    category: "Projects",
+    projectStartDate: new Date("2025-01-11"),
+    projectStatus: "In Progress",
+    liveDemoUrl: "https://deepseek-clone-gold.vercel.app/"
+  },
+  {
+    id: "5",
+    title: "portfolio Website Project",
+    slug: "portfolio-website-project",
+    shortDescription: "DeepSeek clone website",
+    description: "This project serves as one of my personal projects.",
+    imageUrl: "/images/my-portfolio-website-project.png",
+    githubUrl: "https://github.com/dhlananhh/my-3d-portfolio",
+    tools: [ "Next.js", "TailwindCSS", "TypeScript", "Radix UI", "Shadcn UI" ],
+    category: "Projects",
+    projectStartDate: new Date("2025-01-11"),
+    projectStatus: "In Progress",
+    liveDemoUrl: "https://my-3d-portfolio-wine.vercel.app/"
   },
 ];
 
