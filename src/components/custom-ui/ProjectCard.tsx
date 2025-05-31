@@ -52,18 +52,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView="visible"
       viewport={ { once: true, amount: 0.2 } }
       custom={ index }
-      className={ `bg-gray-800 rounded-xl overflow-hidden shadow-xl transition-all duration-300 ease-in-out hover:shadow-teal-500/30 hover:scale-[1.02] flex flex-col
-        ${project.isFeatured
-          ? "border-2 border-teal-500"
-          : "border-2 border-transparent"
-        }` }
+      className={ `bg-gray-800 rounded-xl overflow-hidden shadow-xl transition-all duration-300 ease-in-out hover:shadow-teal-500/30 hover:scale-[1.02] flex flex-col` }
     >
-      {/* Featured Badge */ }
-      { project.isFeatured && (
-        <div className="absolute top-0 left-0 bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-br-lg z-10">
-          Featured
-        </div>
-      ) }
 
       <div className="relative w-full h-56 sm:h-60">
         <Image
@@ -110,7 +100,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         <p className="text-xs text-gray-400 mb-1 font-medium">
-          Tools & Technologies:
+          Technologies & Frameworks:
         </p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           { project.tools.map((tool) => (
