@@ -21,6 +21,7 @@ package-lock.json*
 
 # production
 /build
+/.gemini/
 
 # misc
 .DS_Store
