@@ -99,9 +99,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "5",
-    title: "portfolio Website Project",
+    title: "Portfolio Website Project",
     slug: "portfolio-website-project",
-    shortDescription: "DeepSeek clone website",
+    shortDescription: "My Portfolio Website",
     description: "This project serves as one of my personal projects.",
     imageUrl: "/images/my-portfolio-website-project.png",
     githubUrl: "https://github.com/dhlananhh/my-3d-portfolio",
