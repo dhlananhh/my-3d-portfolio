@@ -1,6 +1,6 @@
 "use client";
 
-import ContactForm from "@/components/ui/ContactForm";
+import ContactForm from "@/components/custom-ui/ContactForm";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
 

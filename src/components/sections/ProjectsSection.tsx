@@ -1,6 +1,6 @@
 "use client";
 import { projectsData } from "@/lib/data";
-import ProjectCard from "@/components/ui/ProjectCard";
+import ProjectCard from "@/components/custom-ui/ProjectCard";
 import { motion } from "framer-motion";
 
 const containerVariants = {

@@ -1,6 +1,6 @@
 "use client";
 import { frontendSkillsData, FrontendSkill } from "@/lib/data";
-import SkillBar from "@/components/ui/SkillBar";
+import SkillBar from "@/components/custom-ui/SkillBar";
 import { motion } from "framer-motion";
 import {
   Code2,
