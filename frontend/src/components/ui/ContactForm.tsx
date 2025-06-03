@@ -97,7 +97,7 @@ export default function ContactForm() {
           value={ email }
           onChange={ (e) => setEmail(e.target.value) }
           className="block w-full px-4 py-3 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400"
-          placeholder="you@example.com"
+          placeholder="Enter your email address"
         />
       </motion.div>
       <motion.div variants={ inputVariants } custom={ 2 }>
@@ -112,7 +112,7 @@ export default function ContactForm() {
           value={ subject }
           onChange={ (e) => setSubject(e.target.value) }
           className="block w-full px-4 py-3 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400"
-          placeholder="About cooperation opportunities..."
+          placeholder="Subject about cooperation opportunities..."
         />
       </motion.div>
       <motion.div variants={ inputVariants } custom={ 3 }>
