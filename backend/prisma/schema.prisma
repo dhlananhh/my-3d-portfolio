@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model message {
+  id         String   @id @default(uuid())
+  name       String
+  email      String
+  subject    String
+  message    String   @db.Text
+  isRead     Boolean  @default(false)
+  receivedAt DateTime @default(now())
+}
+
+model project {
+  id               String    @id @default(uuid())
+  title            String    @unique(map: "Project_title_key")
+  slug             String    @unique(map: "Project_slug_key")
+  shortDescription String
+  description      String    @db.Text
+  imageUrl         String
+  videoUrl         String?
+  tools            String    @db.LongText
+  category         String
+  projectDate      DateTime?
+  isFeatured       Boolean   @default(false)
+  order            Int?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime
+}
+
+model skill {
+  id        String         @id @default(uuid())
+  name      String         @unique(map: "Skill_name_key")
+  level     Int
+  category  skill_category
+  icon      String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime
+}
+
+model testimonial {
+  id            String   @id @default(uuid())
+  quote         String   @db.Text
+  author        String
+  authorCompany String?
+  authorAvatar  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime
+}
+
+model user {
+  id        String    @id @default(uuid())
+  username  String    @unique(map: "User_username_key")
+  email     String    @unique(map: "User_email_key")
+  password  String
+  role      user_role @default(USER)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime
+}
+
+enum skill_category {
+  SOFTWARE
+  TECHNIQUE
+  RENDERING
+  OTHER
+}
+
+enum user_role {
+  USER
+  ADMIN
+}
