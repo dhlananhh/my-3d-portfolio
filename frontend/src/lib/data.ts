@@ -98,14 +98,14 @@ export const skillsData: Skill[] = [
 export const testimonialsData: Testimonial[] = [
   {
     id: "1",
-    quote: "Khả năng animation và sự tỉ mỉ của [Tên Của Bạn] đã thổi hồn vào nhân vật của chúng tôi. Chất lượng vượt trên cả mong đợi!",
+    quote: "Khả năng coding và sự tỉ mỉ của Lan Anh đã giúp ích rất nhiều cho team dev của chúng tôi. Chất lượng vượt trên cả mong đợi!",
     author: "Jane Doe",
     company: "Giám đốc Sáng tạo, Big Game Studio",
     avatarUrl: "/images/avatars/jane-doe.jpg",
   },
   {
     id: "2",
-    quote: "Làm việc với [Tên Của Bạn] rất chuyên nghiệp và hiệu quả. Họ không chỉ có kỹ năng kỹ thuật tốt mà còn có óc sáng tạo tuyệt vời.",
+    quote: "Làm việc với Lan Anh rất chuyên nghiệp và hiệu quả. Cô ấy không chỉ có kỹ năng kỹ thuật tốt mà còn có khả năng làm việc nhóm, và thích ứng với môi trường mới 1 cách tuyệt vời.",
     author: "John Smith",
     company: "Đạo diễn Phim Ngắn 'XYZ'",
     avatarUrl: "/images/avatars/john-smith.jpg",
