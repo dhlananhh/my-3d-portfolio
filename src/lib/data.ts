@@ -82,16 +82,16 @@ export const projectsData: Project[] = [
 export const testimonialsData: Testimonial[] = [
   {
     id: "1",
-    quote: "Khả năng coding và sự tỉ mỉ của Lan Anh đã giúp ích rất nhiều cho team dev của chúng tôi. Chất lượng vượt trên cả mong đợi!",
+    quote: "Lan Anh's coding ability and meticulousness have been a great help to our dev team. The quality exceeded expectations!",
     author: "Jane Doe",
     company: "Senior Engineer, Big Game Studio",
     avatarUrl: "/images/jane-doe.png",
   },
   {
     id: "2",
-    quote: "Làm việc với Lan Anh rất chuyên nghiệp và hiệu quả. Cô ấy không chỉ có kỹ năng kỹ thuật tốt mà còn có khả năng làm việc nhóm, và thích ứng với môi trường mới 1 cách tuyệt vời.",
+    quote: "Working with Lan Anh was very professional and efficient. She not only has good technical skills but also has the ability to work in a team, and adapt to new environments wonderfully.",
     author: "John Smith",
-    company: "Giám đốc công ty ABC",
+    company: "Head of IT of ABC company",
     avatarUrl: "/images/john-smith.png",
   },
 ];

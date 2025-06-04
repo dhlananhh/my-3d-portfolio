@@ -11,11 +11,11 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
   { href: "/#skills", label: "Skills" },
   { href: "/#resume", label: "Resume" },
   { href: "/#contact", label: "Contact" },
-  { href: "/#testimonials", label: "Testimonials" },
 ];
 
 export default function Navbar() {
@@ -30,7 +30,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors">
+            <Link
+              href="/"
+              className="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors"
+            >
               Lan Anh
             </Link>
           </div>
@@ -42,6 +45,15 @@ export default function Navbar() {
                   key={ item.label }
                   href={ item.href }
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  onClick={ (e) => {
+                    if (item.href.startsWith("/#")) {
+                      e.preventDefault();
+                      document.querySelector(item.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                      setIsOpen(false);
+                    } else {
+                      setIsOpen(false);
+                    }
+                  } }
                 >
                   { item.label }
                 </Link>
@@ -70,7 +82,13 @@ export default function Navbar() {
               <Link
                 key={ item.label }
                 href={ item.href }
-                onClick={ () => setIsOpen(false) }
+                onClick={ (e) => {
+                  if (item.href.startsWith("/#")) {
+                    e.preventDefault();
+                    document.querySelector(item.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setIsOpen(false);
+                } }
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 { item.label }

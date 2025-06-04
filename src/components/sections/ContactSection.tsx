@@ -1,34 +1,27 @@
 "use client";
+
 import ContactForm from "@/components/ui/ContactForm";
 import { motion } from "framer-motion";
-import {
-  Linkedin, Github, AtSign, Film
-} from "lucide-react";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourprofile",
-    icon: Linkedin,
+    url: "https://linkedin.com/in/dhlananh",
+    icon: FaLinkedin,
     color: "hover:text-blue-400",
   },
   {
     name: "GitHub",
-    url: "https://github.com/yourprofile",
-    icon: Github,
+    url: "https://github.com/dhlananhh",
+    icon: FaGithub,
     color: "hover:text-gray-400",
   },
   {
     name: "Email",
-    url: "mailto:youremail@example.com",
-    icon: AtSign,
+    url: "mailto:dhlananh2309@gmail.com",
+    icon: FaEnvelope,
     color: "hover:text-red-400",
-  },
-  {
-    name: "ArtStation/Vimeo",
-    url: "https://www.artstation.com/yourprofile",
-    icon: Film,
-    color: "hover:text-sky-400",
   },
 ];
 
