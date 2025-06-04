@@ -17,7 +17,7 @@ const AboutMeSection = () => {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-gray-800 text-white">
+    <section id="about" className="py-16 sm:py-24 bg-gray-700 text-white">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={ { opacity: 0, y: -20 } }
