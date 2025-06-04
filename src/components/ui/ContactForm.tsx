@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Send, Loader2, CheckCircle, AlertTriangle } from "lucide-react";
@@ -29,26 +30,17 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        setFormState({
-          status: "success", message: data.message ||
-            "Your message has been sent successfully.!"
-        });
+        setFormState({ status: "success", message: data.message || "Your message has been sent successfully!" });
         setName("");
         setEmail("");
         setSubject("");
         setMessage("");
       } else {
-        setFormState({
-          status: "error", message: data.message ||
-            "An error occurred. Please try again."
-        });
+        setFormState({ status: "error", message: data.message || "An error occurred. Please try again." });
       }
     } catch (error) {
       console.error("Contact form submission error:", error);
-      setFormState({
-        status: "error",
-        message: "Unable to connect to server. Please try again later."
-      });
+      setFormState({ status: "error", message: "Could not connect to the server. Please try again later." });
     }
   };
 
@@ -72,7 +64,7 @@ export default function ContactForm() {
     >
       <motion.div variants={ inputVariants } custom={ 0 }>
         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-          Your name
+          Full Name
         </label>
         <input
           type="text"
@@ -82,7 +74,7 @@ export default function ContactForm() {
           value={ name }
           onChange={ (e) => setName(e.target.value) }
           className="block w-full px-4 py-3 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400"
-          placeholder="Enter your name"
+          placeholder="Enter your full name"
         />
       </motion.div>
       <motion.div variants={ inputVariants } custom={ 1 }>
@@ -127,7 +119,7 @@ export default function ContactForm() {
           value={ message }
           onChange={ (e) => setMessage(e.target.value) }
           className="block w-full px-4 py-3 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400"
-          placeholder="Enter your message content..."
+          placeholder="Enter your message content"
         ></textarea>
       </motion.div>
       <motion.div variants={ inputVariants } custom={ 4 }>
@@ -146,10 +138,16 @@ export default function ContactForm() {
         <motion.div
           initial={ { opacity: 0, y: 10 } }
           animate={ { opacity: 1, y: 0 } }
-          className={ `mt-4 p-3 rounded-md text-sm flex items-center
-            ${formState.status === "success" ? "bg-green-500 bg-opacity-20 text-green-300" :
-              formState.status === "error" ? "bg-red-500 bg-opacity-20 text-red-300" : ""
-            }` }
+          className={
+            `mt-4 p-3 rounded-md text-sm flex items-center
+            ${formState.status === "success"
+              ? "bg-green-600 bg-opacity-30 text-green-300 border border-green-500"
+              :
+              formState.status === "error"
+                ? "bg-red-600 bg-opacity-30 text-red-300 border border-red-500"
+                : ""
+            }`
+          }
         >
           { formState.status === "success" && <CheckCircle className="mr-2 h-5 w-5" /> }
           { formState.status === "error" && <AlertTriangle className="mr-2 h-5 w-5" /> }
