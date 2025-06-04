@@ -25,7 +25,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-16 sm:py-24 bg-gray-800">
+    <section id="testimonials" className="py-16 sm:py-24 bg-gray-700">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={ { opacity: 0, y: -20 } }
