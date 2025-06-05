@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+
 const siteUrl = "https://my-3d-portfolio-wine.vercel.app/";
 
 export default function sitemap(): MetadataRoute.Sitemap {
