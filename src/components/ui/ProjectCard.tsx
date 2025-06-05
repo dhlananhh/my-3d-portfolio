@@ -30,7 +30,7 @@ const cardVariants = {
 };
 
 const formatDate = (date: Date): string => {
-  return new Intl.DateTimeFormat("vi-VN", {
+  return new Intl.DateTimeFormat("en-UK", {
     year: "numeric",
     month: "short",
     day: "2-digit",
