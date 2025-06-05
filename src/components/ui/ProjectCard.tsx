@@ -56,16 +56,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </span>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
-          { project.tools.slice(0, 3).map((tool) => (
+          { project.tools.map((tool) => (
             <span key={ tool } className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded-full">
               { tool }
             </span>
           )) }
-          { project.tools.length > 3 && (
-            <span className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded-full">
-              +{ project.tools.length - 3 } more
-            </span>
-          ) }
         </div>
         <Link
           href={ `/projects/${project.slug}` }
