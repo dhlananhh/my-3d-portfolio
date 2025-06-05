@@ -53,7 +53,7 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/dhlananhh/quickcart/",
     tools: [ "Next.js", "TailwindCSS", "Clerk", "MongoDB" ],
     category: "Projects",
-    projectStartDate: new Date("2022-11-20"),
+    projectStartDate: new Date("2025-05-27"),
     projectStatus: "In Progress",
     isFeatured: true,
     liveDemoUrl: "https://quickcart-gs.vercel.app/"
