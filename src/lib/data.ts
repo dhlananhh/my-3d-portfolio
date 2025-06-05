@@ -65,7 +65,7 @@ export const projectsData: Project[] = [
     imageUrl: "/images/ecommerce-project.png",
     githubUrl: "https://github.com/dhlananhh/quickcart/",
     tools: [ "VSCode", "Next.js", "TailwindCSS", "Clerk", "MongoDB" ],
-    category: "Short Film",
+    category: "Projects",
     projectStartDate: new Date("2022-11-20"),
     projectStatus: "In Progress",
     isFeatured: true,
