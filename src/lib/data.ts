@@ -5,10 +5,12 @@ export interface Project {
   shortDescription: string;
   imageUrl: string;
   videoUrl?: string;
+  githubUrl: string;
   tools: string[];
   category: string;
   slug: string;
-  projectDate: Date;
+  projectStartDate: Date;
+  projectStatus: string;
   isFeatured: boolean;
 }
 
@@ -40,41 +42,46 @@ export interface Testimonial {
 
 
 export const projectsData: Project[] = [
+  // {
+  //   id: "1",
+  //   title: "Chiến Binh Rồng Thiêng",
+  //   slug: "chien-binh-rong-thieng",
+  //   shortDescription: "Mô hình 3D và animation cho nhân vật rồng trong game AAA.",
+  //   description: "Một dự án đầy thử thách về việc tạo hình, rigging và animation cho một nhân vật rồng phức tạp, tối ưu hóa cho hiệu suất game engine. Bao gồm các chuỗi animation tấn công, bay lượn và biểu cảm.",
+  //   imageUrl: "/images/projects/dragon-thumbnail.jpg",
+  //   videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  //   githubUrl: "",
+  //   tools: [ "Blender", "ZBrush", "Substance Painter", "Unity" ],
+  //   category: "Game Character",
+  //   projectStartDate: new Date("2023-05-15"),
+  //   isFeatured: true,
+  // },
   {
-    id: "cmbg4e0zz0000ijucrxuovsdk",
-    title: "Chiến Binh Rồng Thiêng",
-    slug: "chien-binh-rong-thieng",
-    shortDescription: "Mô hình 3D và animation cho nhân vật rồng trong game AAA.",
-    description: "Một dự án đầy thử thách về việc tạo hình, rigging và animation cho một nhân vật rồng phức tạp, tối ưu hóa cho hiệu suất game engine. Bao gồm các chuỗi animation tấn công, bay lượn và biểu cảm.",
-    imageUrl: "/images/projects/dragon-thumbnail.jpg", // URL ảnh sẽ được phục vụ từ frontend
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Rickroll placeholder ;)
-    tools: [ "Blender", "ZBrush", "Substance Painter", "Unity" ],
-    category: "Game Character",
-    projectDate: new Date("2023-05-15"),
-    isFeatured: true,
-  },
-  {
-    id: "cmbg4e1120001ijucgcppybyv",
-    title: "Phim Ngắn: Hành Trình Kỳ Diệu",
+    id: "1",
+    title: "Ecommerce Full-stack Website",
     slug: "phim-ngan-hanh-trinh-ky-dieu",
     shortDescription: "Sản xuất animation cho một phim ngắn CGI độc lập.",
     description: "Tham gia vào toàn bộ quy trình sản xuất, từ storyboard, modeling, texturing, rigging, animation, lighting, đến rendering và compositing. Câu chuyện kể về cuộc phiêu lưu của một chú robot nhỏ.",
     imageUrl: "/images/short-film-thumbnail.jpg",
-    tools: [ "Maya", "Arnold Renderer", "Nuke", "Photoshop" ],
+    githubUrl: "https://github.com/dhlananhh/quickcart/",
+    tools: [ "VSCode", "Next.js", "TailwindCSS", "Clerk", "MongoDB" ],
     category: "Short Film",
-    projectDate: new Date("2022-11-20"),
+    projectStartDate: new Date("2022-11-20"),
+    projectStatus: "In Progress",
     isFeatured: true,
   },
   {
-    id: "",
+    id: "2",
     title: "Online Bookstore Full-stack Project",
     slug: "online-bookstore-project",
     shortDescription: "Online bookstore system, with chatbot integration.",
     description: "This project serves as a final report exam on software architecture. I am a member of this project, as a frontend coder, building and integrating chatbot into the bookstore system.",
     imageUrl: "/images/bookstore-project.png",
+    githubUrl: "https://github.com/minhlq2003/bookstore-frontend-nextjs",
     tools: [ "VSCode", "Next.js", "TailwindCSS", "TypeScript", "Node.js", "Express.js" ],
     category: "Projects",
-    projectDate: new Date("2022-11-20"),
+    projectStartDate: new Date("2025-01-11"),
+    projectStatus: "Completed",
     isFeatured: true,
   },
 ];
@@ -106,9 +113,7 @@ export const frontendSkillsData: FrontendSkill[] = [
   // Frameworks/Libraries
   { name: "React", level: 95, category: "Frameworks/Libraries", description: "Component-based architecture, Hooks, Context API." },
   { name: "Next.js", level: 90, category: "Frameworks/Libraries", description: "SSR, SSG, API Routes, App Router." },
-  { name: "Vue.js", level: 75, category: "Frameworks/Libraries", description: "Progressive framework, Options/Composition API." }, // Ví dụ thêm
   { name: "Redux / Redux Toolkit", level: 85, category: "State Management", description: "Predictable state container for complex apps." },
-  { name: "Zustand", level: 80, category: "State Management", description: "Minimalistic state management for React." },
 
   // Styling
   { name: "Tailwind CSS", level: 95, category: "Styling", description: "Utility-first CSS framework for rapid UI development." },
@@ -118,7 +123,7 @@ export const frontendSkillsData: FrontendSkill[] = [
 
   // API & Data Fetching
   { name: "RESTful APIs", level: 90, category: "API & Data Fetching", description: "Consuming and interacting with REST services." },
-  { name: "GraphQL", level: 70, category: "API & Data Fetching", description: "Query language for APIs, client-side integration." },
+  { name: "GraphQL", level: 50, category: "API & Data Fetching", description: "Query language for APIs, client-side integration." },
   { name: "React Query / SWR", level: 85, category: "API & Data Fetching", description: "Data synchronization, caching, and server state management." },
   { name: "Axios / Fetch API", level: 90, category: "API & Data Fetching", description: "Making HTTP requests." },
 
