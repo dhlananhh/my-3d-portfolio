@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
     "framer-motion": "^12.15.0",
     "lucide-react": "^0.511.0",
     "mariadb": "^3.4.2",
