@@ -62,7 +62,7 @@ export const projectsData: Project[] = [
     slug: "phim-ngan-hanh-trinh-ky-dieu",
     shortDescription: "Sản xuất animation cho một phim ngắn CGI độc lập.",
     description: "Tham gia vào toàn bộ quy trình sản xuất, từ storyboard, modeling, texturing, rigging, animation, lighting, đến rendering và compositing. Câu chuyện kể về cuộc phiêu lưu của một chú robot nhỏ.",
-    imageUrl: "/images/short-film-thumbnail.jpg",
+    imageUrl: "/images/ecommerce-project.png",
     githubUrl: "https://github.com/dhlananhh/quickcart/",
     tools: [ "VSCode", "Next.js", "TailwindCSS", "Clerk", "MongoDB" ],
     category: "Short Film",
