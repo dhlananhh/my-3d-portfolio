@@ -2,14 +2,14 @@
 
 import ContactForm from "@/components/ui/ContactForm";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const socialLinks = [
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/dhlananh",
     icon: FaLinkedin,
-    color: "hover:text-blue-400",
+    color: "hover:text-cyan-400",
   },
   {
     name: "GitHub",
@@ -22,6 +22,18 @@ const socialLinks = [
     url: "mailto:dhlananh2309@gmail.com",
     icon: FaEnvelope,
     color: "hover:text-red-400",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/dhlananhh/",
+    icon: FaFacebook,
+    color: "hover:text-blue-400",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/dhlananh",
+    icon: FaInstagram,
+    color: "hover:text-pink-400",
   },
 ];
 
@@ -57,7 +69,7 @@ export default function ContactSection() {
             transition={ { duration: 0.5, delay: 0.6 } }
             className="mt-12 text-center"
           >
-            <p className="text-gray-400 mb-4">Or find me on:</p>
+            <p className="text-gray-400 mb-4">Or find me on social media platforms:</p>
             <div className="flex justify-center space-x-6">
               { socialLinks.map((link) => (
                 <motion.a
