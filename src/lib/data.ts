@@ -12,6 +12,7 @@ export interface Project {
   projectStartDate: Date;
   projectStatus: string;
   isFeatured: boolean;
+  liveDemoUrl?: string;
 }
 
 export interface FrontendSkill {
@@ -42,24 +43,10 @@ export interface Testimonial {
 
 
 export const projectsData: Project[] = [
-  // {
-  //   id: "1",
-  //   title: "Chiến Binh Rồng Thiêng",
-  //   slug: "chien-binh-rong-thieng",
-  //   shortDescription: "Mô hình 3D và animation cho nhân vật rồng trong game AAA.",
-  //   description: "Một dự án đầy thử thách về việc tạo hình, rigging và animation cho một nhân vật rồng phức tạp, tối ưu hóa cho hiệu suất game engine. Bao gồm các chuỗi animation tấn công, bay lượn và biểu cảm.",
-  //   imageUrl: "/images/projects/dragon-thumbnail.jpg",
-  //   videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  //   githubUrl: "",
-  //   tools: [ "Blender", "ZBrush", "Substance Painter", "Unity" ],
-  //   category: "Game Character",
-  //   projectStartDate: new Date("2023-05-15"),
-  //   isFeatured: true,
-  // },
   {
     id: "1",
     title: "Ecommerce Full-stack Website",
-    slug: "phim-ngan-hanh-trinh-ky-dieu",
+    slug: "ecommerce-website",
     shortDescription: "Online ecommerce website, with chatbot integration.",
     description: "This project serves as one of my personal projects.",
     imageUrl: "/images/ecommerce-project.png",
@@ -69,6 +56,7 @@ export const projectsData: Project[] = [
     projectStartDate: new Date("2022-11-20"),
     projectStatus: "In Progress",
     isFeatured: true,
+    liveDemoUrl: "https://quickcart-gs.vercel.app/"
   },
   {
     id: "2",
@@ -83,6 +71,7 @@ export const projectsData: Project[] = [
     projectStartDate: new Date("2025-01-11"),
     projectStatus: "Completed",
     isFeatured: true,
+    liveDemoUrl: "https://bookstore-frontend-nextjs.vercel.app/"
   },
 ];
 
