@@ -1,92 +1,91 @@
 "use client";
 
 import ContactForm from "@/components/custom-ui/ContactForm";
+import { SectionHeading } from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"; // Icons cho contact info
+import Link from "next/link";
 
-const socialLinks = [
+const contactDetails = [
+  {
+    name: "Email",
+    value: "dhlananh2309@gmail.com",
+    href: "mailto:dhlananh2309@gmail.com",
+    icon: FaEnvelope,
+  },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/dhlananh",
+    value: "linkedin.com/in/dhlananh",
+    href: "https://linkedin.com/in/dhlananh",
     icon: FaLinkedin,
-    color: "hover:text-cyan-400",
   },
   {
     name: "GitHub",
-    url: "https://github.com/dhlananhh",
+    value: "github.com/dhlananhh",
+    href: "https://github.com/dhlananhh",
     icon: FaGithub,
-    color: "hover:text-gray-400",
-  },
-  {
-    name: "Email",
-    url: "mailto:dhlananh2309@gmail.com",
-    icon: FaEnvelope,
-    color: "hover:text-red-400",
-  },
-  {
-    name: "Facebook",
-    url: "https://www.facebook.com/dhlananhh/",
-    icon: FaFacebook,
-    color: "hover:text-blue-400",
-  },
-  {
-    name: "Instagram",
-    url: "https://instagram.com/dhlananh",
-    icon: FaInstagram,
-    color: "hover:text-pink-400",
   },
 ];
 
-export default function ContactSection() {
-  return (
-    <section id="contact" className="py-16 sm:py-24 bg-gray-900">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          initial={ { opacity: 0, y: -20 } }
-          whileInView={ { opacity: 1, y: 0 } }
-          viewport={ { once: true, amount: 0.5 } }
-          transition={ { duration: 0.5 } }
-          className="text-3xl sm:text-4xl font-bold text-center mb-12 text-teal-400"
-        >
-          Contact
-        </motion.h2>
-        <div className="max-w-3xl mx-auto">
-          <motion.p
-            initial={ { opacity: 0 } }
-            whileInView={ { opacity: 1 } }
-            viewport={ { once: true, amount: 0.5 } }
-            transition={ { duration: 0.5, delay: 0.2 } }
-            className="text-lg text-center text-gray-300 mb-10"
-          >
-            Have an interesting project you want to discuss, or just want to say hello? Feel free to send me a message! I&apos;d love to hear from you.
-          </motion.p>
-          <ContactForm />
+const currentStatus = "Available for freelance work and full-time opportunities";
 
+export default function ContactSection() {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  return (
+    <section id="contact" className="py-24 sm:py-32 relative bg-gray-950 text-white overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-70 sm:opacity-100">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 sm:opacity-25 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-r from-fuchsia-500 to-pink-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 sm:opacity-25 animate-blob"></div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <SectionHeading title="Get In Touch" subtitle="Let's work together" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           <motion.div
-            initial={ { opacity: 0, y: 20 } }
-            whileInView={ { opacity: 1, y: 0 } }
-            viewport={ { once: true, amount: 0.5 } }
-            transition={ { duration: 0.5, delay: 0.6 } }
-            className="mt-12 text-center"
+            variants={ cardVariants }
+            initial="hidden"
+            whileInView="visible"
+            viewport={ { once: true, amount: 0.2 } }
+            className="bg-zinc-800/70 backdrop-blur-md border border-zinc-700/50 rounded-xl p-6 sm:p-8 shadow-xl mt-10"
           >
-            <p className="text-gray-400 mb-4">Or find me on social media platforms:</p>
-            <div className="flex justify-center space-x-6">
-              { socialLinks.map((link) => (
-                <motion.a
-                  key={ link.name }
-                  href={ link.url }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={ `text-gray-500 transition-colors duration-300 ${link.color}` }
-                  aria-label={ `Connect with me via ${link.name}` }
-                  whileHover={ { y: -3, scale: 1.1 } }
-                  transition={ { type: "spring", stiffness: 300 } }
-                >
-                  <link.icon size={ 28 } />
-                </motion.a>
+            <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+            <ul className="space-y-5 mb-8">
+              { contactDetails.map((item) => (
+                <li key={ item.name } className="flex items-start gap-4">
+                  <item.icon className="text-blue-400 w-5 h-5 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm text-zinc-400">{ item.name }</p>
+                    <Link
+                      href={ item.href }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-200 hover:text-blue-300 transition-colors break-all"
+                    >
+                      { item.value }
+                    </Link>
+                  </div>
+                </li>
               )) }
+            </ul>
+
+            <div className="border-t border-zinc-700/50 pt-6">
+              <h4 className="text-lg font-medium text-white mb-3">Current Status</h4>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                <p className="text-sm text-zinc-300">{ currentStatus }</p>
+              </div>
             </div>
           </motion.div>
+
+          <div className="bg-zinc-800/70 backdrop-blur-md border border-zinc-700/50 rounded-xl p-6 sm:p-8 shadow-xl mt-10">
+            <h3 className="text-2xl font-semibold text-white mb-6">Send Me a Message</h3>
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>
