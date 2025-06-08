@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { FiSend, FiLoader, FiCheckCircle, FiAlertTriangle } from "react-icons/fi";
 
 interface FormState {
@@ -196,7 +197,7 @@ export default function ContactForm() {
       </div>
 
       <motion.div variants={ inputVariants } custom={ 4 }>
-        <button
+        <Button
           type="submit"
           disabled={ formState.status === "loading" || !WEB3FORMS_ACCESS_KEY }
           className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-semibold text-white
@@ -209,7 +210,7 @@ export default function ContactForm() {
           { formState.status === "loading" && <FiLoader className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" /> }
           { formState.status !== "loading" && <FiSend size={ 18 } className="-ml-1 mr-2.5 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" /> }
           Send Message
-        </button>
+        </Button>
       </motion.div>
 
       { formState.message && (

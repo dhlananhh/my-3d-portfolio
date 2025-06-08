@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -78,14 +79,14 @@ export default function Navbar() {
           </div>
           {/* Mobile Menu Button */ }
           <div className="md:hidden flex items-center">
-            <button
+            <Button
               onClick={ toggleMenu }
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-expanded={ isOpen }
               aria-label={ isOpen ? "Close menu" : "Open menu" }
             >
               { isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" /> }
-            </button>
+            </Button>
           </div>
         </div>
       </div>
