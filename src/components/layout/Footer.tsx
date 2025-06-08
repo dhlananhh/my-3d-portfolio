@@ -151,7 +151,7 @@ export default function Footer() {
       <motion.button
         onClick={ scrollToTop }
         aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50 transition-all duration-300 shadow-lg"
+        className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50 transition-all duration-300 shadow-lg"
         whileHover={ { scale: 1.1, rotate: 360 } }
         whileTap={ { scale: 0.95 } }
         initial={ { scale: 0, opacity: 0 } }
