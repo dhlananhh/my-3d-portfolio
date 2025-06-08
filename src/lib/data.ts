@@ -14,24 +14,6 @@ export interface Project {
   liveDemoUrl?: string;
 }
 
-export interface FrontendSkill {
-  name: string;
-  level: number;
-  category:
-  | "Languages"
-  | "Frameworks/Libraries"
-  | "Styling"
-  | "State Management"
-  | "Build Tools & Bundlers"
-  | "API & Data Fetching"
-  | "Testing"
-  | "Version Control"
-  | "Developer Tools"
-  | "Concepts & Other";
-  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
-  description?: string;
-}
-
 export interface Testimonial {
   id: string;
   quote: string;
@@ -128,55 +110,4 @@ export const testimonialsData: Testimonial[] = [
     company: "Head of IT of ABC company",
     avatarUrl: "/images/john-smith.png",
   },
-];
-
-export const frontendSkillsData: FrontendSkill[] = [
-  // Languages
-  { name: "HTML5", level: 95, category: "Languages", description: "Semantic structure and modern APIs." },
-  { name: "CSS3", level: 90, category: "Languages", description: "Flexbox, Grid, Animations, Custom Properties." },
-  { name: "JavaScript (ES6+)", level: 95, category: "Languages", description: "Modern syntax, Async/Await, DOM manipulation." },
-  { name: "TypeScript", level: 90, category: "Languages", description: "Strong typing for scalable applications." },
-
-  // Frameworks/Libraries
-  { name: "React", level: 95, category: "Frameworks/Libraries", description: "Component-based architecture, Hooks, Context API." },
-  { name: "Next.js", level: 90, category: "Frameworks/Libraries", description: "SSR, SSG, API Routes, App Router." },
-  { name: "Redux / Redux Toolkit", level: 85, category: "State Management", description: "Predictable state container for complex apps." },
-
-  // Styling
-  { name: "Tailwind CSS", level: 95, category: "Styling", description: "Utility-first CSS framework for rapid UI development." },
-  { name: "Sass/SCSS", level: 85, category: "Styling", description: "CSS preprocessor with variables, mixins, nesting." },
-  { name: "Styled Components", level: 80, category: "Styling", description: "CSS-in-JS library for component-level styling." },
-  { name: "CSS Modules", level: 75, category: "Styling", description: "Locally scoped CSS for components." },
-
-  // API & Data Fetching
-  { name: "RESTful APIs", level: 90, category: "API & Data Fetching", description: "Consuming and interacting with REST services." },
-  { name: "GraphQL", level: 50, category: "API & Data Fetching", description: "Query language for APIs, client-side integration." },
-  { name: "React Query / SWR", level: 85, category: "API & Data Fetching", description: "Data synchronization, caching, and server state management." },
-  { name: "Axios / Fetch API", level: 90, category: "API & Data Fetching", description: "Making HTTP requests." },
-
-  // Build Tools & Bundlers
-  { name: "Webpack", level: 75, category: "Build Tools & Bundlers", description: "Module bundler, often configured via frameworks." },
-  { name: "Vite", level: 85, category: "Build Tools & Bundlers", description: "Next-generation frontend tooling, fast HMR." },
-  { name: "npm / yarn / pnpm", level: 95, category: "Build Tools & Bundlers", description: "Package managers and script runners." },
-
-  // Testing
-  { name: "Jest", level: 80, category: "Testing", description: "JavaScript testing framework, unit/integration tests." },
-  { name: "React Testing Library", level: 85, category: "Testing", description: "Testing React components guiding good practices." },
-  { name: "Cypress / Playwright", level: 70, category: "Testing", description: "End-to-end testing frameworks." },
-
-  // Version Control
-  { name: "Git", level: 95, category: "Version Control", description: "Distributed version control system." },
-  { name: "GitHub / GitLab", level: 90, category: "Version Control", description: "Collaboration platforms for Git." },
-
-  // Developer Tools
-  { name: "VS Code", level: 95, category: "Developer Tools", description: "Primary code editor with extensions and debugging." },
-  { name: "Browser Developer Tools", level: 98, category: "Developer Tools", description: "Essential for debugging, profiling, and inspection." },
-  { name: "Figma / Zeplin", level: 80, category: "Developer Tools", description: "Collaboration with designers, inspecting designs." },
-
-  // Concepts & Other
-  { name: "Responsive Web Design", level: 95, category: "Concepts & Other", description: "Creating layouts adaptable to all screen sizes." },
-  { name: "Web Performance Optimization", level: 85, category: "Concepts & Other", description: "Lazy loading, code splitting, image optimization." },
-  { name: "Accessibility (WCAG)", level: 80, category: "Concepts & Other", description: "Building inclusive web experiences." },
-  { name: "SEO Basics for Frontend", level: 70, category: "Concepts & Other", description: "Semantic HTML, meta tags, performance impact." },
-  { name: "Progressive Web Apps (PWA)", level: 65, category: "Concepts & Other", description: "Creating app-like experiences." },
 ];
