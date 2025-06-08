@@ -2,6 +2,7 @@
 
 import { testimonialsData } from "@/lib/data";
 import TestimonialCard from "@/components/custom-ui/TestimonialCard";
+import { SectionHeading } from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -10,7 +11,7 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
@@ -26,19 +27,17 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-16 sm:py-24 bg-gray-700">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          initial={ { opacity: 0, y: -20 } }
-          whileInView={ { opacity: 1, y: 0 } }
-          viewport={ { once: true, amount: 0.5 } }
-          transition={ { duration: 0.5 } }
-          className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-teal-400"
-        >
-          What Customers Say
-        </motion.h2>
+    <section id="testimonials" className="py-24 sm:py-32 relative bg-gray-950 text-white overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-70 sm:opacity-100">
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mix-blend-screen filter blur-3xl opacity-15 sm:opacity-20 animate-blob"></div>
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-r from-pink-500 to-red-600 rounded-full mix-blend-screen filter blur-3xl opacity-15 sm:opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <SectionHeading title="Testimonials" subtitle="What My Collaborators Say" />
+
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:max-w-4xl mx-auto mt-10"
           variants={ containerVariants }
           initial="hidden"
           whileInView="visible"
