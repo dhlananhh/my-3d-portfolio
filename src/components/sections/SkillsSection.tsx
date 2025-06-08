@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SkillBadge } from "@/components/custom-ui/SkillBadge";
+import { SectionHeading } from "@/components/SectionHeading";
 
 const skillsToDisplay = [
   { name: "ReactJS", level: 95 },
@@ -18,22 +19,6 @@ const skillsToDisplay = [
   { name: "Responsive Design", level: 95 }
 ];
 
-const sectionTitleVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const subtitleVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } },
-};
-
-const underlineVariants = {
-  hidden: { scaleX: 0 },
-  visible: { scaleX: 1, transition: { duration: 0.5, delay: 0.2, ease: "easeOut" } },
-};
-
-
 export default function SkillsSection() {
   return (
     <section id="skills" className="py-24 sm:py-32 relative bg-gray-950 overflow-hidden">
@@ -44,42 +29,14 @@ export default function SkillsSection() {
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        <div className="text-center">
-          <motion.p
-            variants={ subtitleVariants }
-            initial="hidden"
-            whileInView="visible"
-            viewport={ { once: true, amount: 0.5 } }
-            className="text-sm font-medium text-teal-400 uppercase tracking-wider mb-3"
-          >
-            Technologies I work with
-          </motion.p>
-          <motion.h2
-            variants={ sectionTitleVariants }
-            initial="hidden"
-            whileInView="visible"
-            viewport={ { once: true, amount: 0.5 } }
-            className="text-4xl sm:text-5xl font-bold text-white mb-3 mt-3"
-          >
-            My Skills
-          </motion.h2>
-          <motion.div
-            variants={ underlineVariants }
-            initial="hidden"
-            whileInView="visible"
-            viewport={ { once: true, amount: 0.5 } }
-            className="flex justify-center mb-16"
-          >
-            <div className="w-24 h-1.5 mt-3 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 rounded-full"></div>
-          </motion.div>
-        </div>
+        <SectionHeading title="My Skills" subtitle="My Skills & Expertise" />
 
         <motion.div
           initial={ { opacity: 0 } }
           whileInView={ { opacity: 1 } }
-          transition={ { duration: 0.5, delay: 0.4 } }
+          transition={ { duration: 0.5, delay: 0.3 } }
           viewport={ { once: true, amount: 0.05 } }
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mt-10"
         >
           { skillsToDisplay.map((skill) => (
             <SkillBadge
