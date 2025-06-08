@@ -1,6 +1,6 @@
 "use client";
 import { testimonialsData } from "@/lib/data";
-import TestimonialCard from "@/components/ui/TestimonialCard";
+import TestimonialCard from "@/components/custom-ui/TestimonialCard";
 import { motion } from "framer-motion";
 
 const containerVariants = {

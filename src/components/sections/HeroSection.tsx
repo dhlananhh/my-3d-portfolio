@@ -1,5 +1,10 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
@@ -14,26 +19,41 @@ export default function HeroSection() {
 
       <div className="relative z-10 p-4 sm:p-8">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">
-          <span className="block text-white">Hello, I&apos;m Lan Anh</span>
-          <span className="block text-teal-400">FrontEnd Developer</span>
+          <span className="bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 bg-clip-text text-transparent block">
+            Hello, I&apos;m Lan Anh
+          </span>
+          <span className="block text-teal-400">
+            FrontEnd Developer
+          </span>
         </h1>
         <p className="mt-3 text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mx-auto mb-8">
           Passionate about creating dynamic websites and applications with modern frontend technology.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href="/#projects"
-            className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 shadow-lg"
+
+        <motion.div
+          initial={ { opacity: 0, y: 20 } }
+          animate={ { opacity: 1, y: 0 } }
+          transition={ { duration: 0.5, delay: 0.4 } }
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-green-400 to-blue-600 hover:from-green-700 hover:to-blue-600 text-white font-semibold rounded-lg text-lg shadow-lg"
           >
-            View My Projects
-          </Link>
-          <Link
-            href="/#contact"
-            className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 shadow-lg"
+            <Link href="#projects">
+              View Projects <ArrowRight className="ml-1 h-5 w-5 items-center justify-center" />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="text-white font-semibold rounded-lg text-lg shadow-lg hover:scale-105"
           >
-            Contact
-          </Link>
-        </div>
+            <Link href="#contact">Get in Touch</Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
