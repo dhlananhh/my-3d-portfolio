@@ -97,6 +97,10 @@ export default function ContactForm() {
     }),
   };
 
+  const inputBaseClasses =
+    "block w-full px-4 py-2.5 rounded-lg shadow-sm text-white placeholder-zinc-400 text-sm sm:text-base transition-colors duration-200";
+  const inputBgFocusClasses =
+    "bg-zinc-700/60 border-zinc-600 focus:ring-pink-500 focus:border-pink-500";
 
   return (
     <motion.form
@@ -115,7 +119,7 @@ export default function ContactForm() {
       ) }
 
       <motion.div variants={ inputVariants } custom={ 0 }>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-1.5">
           Full Name <span className="text-red-400">*</span>
         </label>
         <input
@@ -125,13 +129,13 @@ export default function ContactForm() {
           required
           value={ name }
           onChange={ (e) => setName(e.target.value) }
-          className="block w-full px-4 py-2.5 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400 text-sm sm:text-base"
+          className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
           placeholder="Your Name"
         />
       </motion.div>
 
       <motion.div variants={ inputVariants } custom={ 1 }>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-1.5">
           Email Address <span className="text-red-400">*</span>
         </label>
         <input
@@ -141,13 +145,13 @@ export default function ContactForm() {
           required
           value={ email }
           onChange={ (e) => setEmail(e.target.value) }
-          className="block w-full px-4 py-2.5 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400 text-sm sm:text-base"
+          className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
           placeholder="you@example.com"
         />
       </motion.div>
 
       <motion.div variants={ inputVariants } custom={ 2 }>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="subject" className="block text-sm font-medium text-zinc-300 mb-1.5">
           Subject <span className="text-red-400">*</span>
         </label>
         <input
@@ -157,13 +161,13 @@ export default function ContactForm() {
           required
           value={ subject }
           onChange={ (e) => setSubject(e.target.value) }
-          className="block w-full px-4 py-2.5 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400 text-sm sm:text-base"
-          placeholder="Regarding a project / opportunity..."
+          className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
+          placeholder="Subject about cooperation opportunities..."
         />
       </motion.div>
 
       <motion.div variants={ inputVariants } custom={ 3 }>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-zinc-300 mb-1.5">
           Message <span className="text-red-400">*</span>
         </label>
         <textarea
@@ -173,7 +177,7 @@ export default function ContactForm() {
           required
           value={ message }
           onChange={ (e) => setMessage(e.target.value) }
-          className="block w-full px-4 py-2.5 rounded-md shadow-sm bg-gray-700 border-gray-600 text-white focus:ring-teal-500 focus:border-teal-500 placeholder-gray-400 text-sm sm:text-base"
+          className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
           placeholder="Your detailed message here..."
         ></textarea>
       </motion.div>
@@ -195,7 +199,12 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={ formState.status === "loading" || !WEB3FORMS_ACCESS_KEY }
-          className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-teal-500 disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-300 group"
+          className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-semibold text-white
+          bg-gradient-to-r from-green-400 via-teal-500 to-blue-600
+          hover:from-green-500 hover:via-teal-600 hover:to-blue-700
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-800
+          focus:ring-teal-400 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300
+          group transform hover:scale-[1.02]"
         >
           { formState.status === "loading" && <FiLoader className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" /> }
           { formState.status !== "loading" && <FiSend size={ 18 } className="-ml-1 mr-2.5 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" /> }
@@ -207,8 +216,8 @@ export default function ContactForm() {
         <motion.div
           initial={ { opacity: 0, y: 10 } }
           animate={ { opacity: 1, y: 0 } }
-          className={ `mt-4 p-3 rounded-md text-sm flex items-center shadow ${formState.status === "success" ? "bg-green-500 bg-opacity-20 text-green-300" :
-            formState.status === "error" ? "bg-red-500 bg-opacity-20 text-red-300" : ""
+          className={ `mt-4 p-3 rounded-md text-sm flex items-center shadow ${formState.status === "success" ? "bg-green-500 bg-opacity-25 text-green-300 border border-green-500/50" :
+            formState.status === "error" ? "bg-red-500 bg-opacity-25 text-red-300 border border-red-500/50" : ""
             }` }
         >
           { formState.status === "success" && <FiCheckCircle className="mr-2 h-5 w-5 flex-shrink-0" /> }
