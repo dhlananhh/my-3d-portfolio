@@ -132,8 +132,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={ project.liveDemoUrl }
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-4
-              rounded-md transition-colors text-sm"
+              className="flex-1 sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 rounded-lg text-md py-2 px-4 text-center font-medium
+              transition-colors bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
             >
               <FaExternalLinkAlt size={ 14 } />
               Live Demo
@@ -143,8 +143,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             !project.liveDemoUrl && (
               <Link
                 href={ `/projects/${project.slug}` }
-                className="flex-1 text-center sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 text-teal-400 hover:text-teal-300 font-medium py-2 px-4
-                rounded-md transition-colors text-sm border border-teal-500 hover:bg-teal-500/10"
+                className="flex-1 sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 rounded-lg text-md py-2 px-4 text-center font-medium text-teal-400 hover:text-teal-300
+                transition-colors text-sm border border-teal-500 hover:bg-teal-500/10"
               >
                 <LucideExternalLink size={ 16 } />
                 View Details
