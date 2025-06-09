@@ -171,7 +171,7 @@ export default function ContactForm() {
           value={ name }
           onChange={ (e) => setName(e.target.value) }
           className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
-          placeholder="Your Name"
+          placeholder="Enter your full name"
           disabled={ formStatus === "loading" }
         />
       </motion.div>
@@ -191,7 +191,7 @@ export default function ContactForm() {
           value={ email }
           onChange={ (e) => setEmail(e.target.value) }
           className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
-          placeholder="you@example.com"
+          placeholder="Enter your email address"
           disabled={ formStatus === "loading" }
         />
       </motion.div>
