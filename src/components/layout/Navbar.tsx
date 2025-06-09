@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ModeToggle } from "@/components/ModeToggle";
 
 interface NavItem {
   href: string;
@@ -70,7 +69,7 @@ export default function Navbar() {
       className={ cn(
         "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out",
         isScrolled || isOpen
-          ? "bg-background/80 dark:bg-background/70 backdrop-blur-lg shadow-md border-b border-border/50"
+          ? "bg-background/80 backdrop-blur-lg shadow-md border-b border-border/50"
           : "bg-transparent"
       ) }
     >
@@ -80,7 +79,7 @@ export default function Navbar() {
             <Link
               href="/#hero"
               onClick={ (e) => handleLinkClick(e, "/#hero") }
-              className="text-2xl font-bold bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-600 dark:from-teal-400 dark:via-cyan-400 dark:to-blue-500 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-600 bg-clip-text text-transparent"
             >
               Lan Anh
             </Link>
@@ -96,8 +95,8 @@ export default function Navbar() {
                 className={ cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
                   activeSection === item.href.substring(2)
-                    ? "text-primary dark:text-teal-300 bg-accent dark:bg-teal-500/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/70 dark:hover:bg-white/10"
+                    ? "text-teal-300 bg-teal-500/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent/70"
                 ) }
               >
                 { item.label }
@@ -121,7 +120,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */ }
       { isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 dark:bg-background/90 backdrop-blur-md shadow-lg border-t border-border/50">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md shadow-lg border-t border-border/50">
           <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
             { navItems.map((item) => (
               <Link
@@ -131,7 +130,7 @@ export default function Navbar() {
                 className={ cn(
                   "block px-3 py-2 rounded-md text-base font-medium transition-colors",
                   activeSection === item.href.substring(2)
-                    ? "text-primary dark:text-teal-300 bg-accent dark:bg-teal-500/10"
+                    ? "text-primary bg-accent"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent/70"
                 ) }
               >
