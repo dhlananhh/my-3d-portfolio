@@ -103,12 +103,10 @@ export default function Navbar() {
                 { item.label }
               </Link>
             )) }
-            <ModeToggle />
           </div>
 
           {/* Mobile Menu Button */ }
           <div className="md:hidden flex items-center">
-            <ModeToggle />
             <button
               onClick={ toggleMenu }
               className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
