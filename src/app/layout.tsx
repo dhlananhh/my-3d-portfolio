@@ -5,7 +5,6 @@ import type React from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { Toaster as RadixToaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: [ "latin" ] });
@@ -37,17 +36,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col
-                        bg-gradient-to-br from-gray-100 via-slate-50 to-stone-100
-                        transition-colors duration-300 text-foreground"
-          >
-            <Navbar />
-            <main className="flex-grow">
-              { children }
-            </main>
-            <Footer />
-          </div>
-          <SonnerToaster />
+          <Navbar />
+          <main className="flex-grow">
+            { children }
+          </main>
+          <Footer />
           <RadixToaster />
         </ThemeProvider>
       </body>
