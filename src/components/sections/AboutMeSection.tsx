@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { GlassmorphicCard } from "@/components/custom-ui/GlassmorphicCard";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -72,21 +71,21 @@ const AboutMeSection = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-8 pt-6 border-t border-zinc-700/50">
                 <div>
-                  <div className="text-xs sm:text-sm text-zinc-500">Name</div>
+                  <div className="text-xs sm:text-sm text-white/90">Name</div>
                   <div className="font-medium text-zinc-200">Lan Anh</div>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm text-zinc-500">Email</div>
+                  <div className="text-xs sm:text-sm text-white/90">Email</div>
                   <Link href="mailto:dhlananh2309@gmail.com" className="font-medium text-zinc-200 hover:text-teal-400 transition-colors">
                     dhlananh2309@gmail.com
                   </Link>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm text-zinc-500">Location</div>
+                  <div className="text-xs sm:text-sm text-white/90">Location</div>
                   <div className="font-medium text-zinc-200">Ho Chi Minh City, Vietnam</div>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm text-zinc-500">Availability</div>
+                  <div className="text-xs sm:text-sm text-white/90">Availability</div>
                   <div className="font-medium text-green-400">Open to opportunities</div>
                 </div>
               </div>
