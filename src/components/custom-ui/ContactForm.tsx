@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FiSend, FiLoader, FiAlertTriangle } from "react-icons/fi";
-import { useToast } from "@/hooks/use-toast"; // Import useToast
+import { useToast } from "@/hooks/use-toast";
 
 interface FormState {
   status: "idle" | "loading" | "success" | "error";
