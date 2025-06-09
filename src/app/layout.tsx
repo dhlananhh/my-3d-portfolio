@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -30,19 +29,12 @@ export default function RootLayout({
       <body
         className={ `${inter.className} antialiased flex flex-col min-h-screen` }
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="flex-grow">
-            { children }
-          </main>
-          <Footer />
-          <RadixToaster />
-        </ThemeProvider>
+        <Navbar />
+        <main className="flex-grow">
+          { children }
+        </main>
+        <Footer />
+        <RadixToaster />
       </body>
     </html>
   );
