@@ -67,10 +67,10 @@ export default function Navbar() {
   return (
     <nav
       className={ cn(
-        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out",
+        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out bg-slate-900/80",
         isScrolled || isOpen
-          ? "bg-background/80 backdrop-blur-lg shadow-md border-b border-border/50"
-          : "bg-transparent"
+          ? "bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-700/60"
+          : "border-b border-transparent"
       ) }
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,8 +130,8 @@ export default function Navbar() {
                 className={ cn(
                   "block px-3 py-2 rounded-md text-base font-medium transition-colors",
                   activeSection === item.href.substring(2)
-                    ? "text-primary bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/70"
+                    ? "bg-teal-500/20 text-teal-300"
+                    : "text-slate-200 hover:text-white hover:bg-slate-700/50"
                 ) }
               >
                 { item.label }
