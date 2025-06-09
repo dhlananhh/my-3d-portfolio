@@ -1,12 +1,9 @@
 "use client"
-
 import { motion } from "framer-motion"
-
 interface SectionHeadingProps {
   title: string
   subtitle: string
 }
-
 export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
   return (
     <div className="text-center space-y-4">
@@ -17,15 +14,21 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
         viewport={ { once: true } }
       >
         <div className="inline-block">
-          <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-2">
-            <span className="relative z-10">{ subtitle }</span>
+          <div className="relative px-3 py-1 text-sm font-medium rounded-full
+                          bg-muted/70 dark:bg-white/10 backdrop-blur-sm
+                          border border-border dark:border-white/20 mb-2"
+          >
+            <span className="relative z-10 text-foreground/80 dark:text-inherit">
+              { subtitle }
+            </span>
             <span className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/20 via-cyan-500/20 to-blue-600/20 animate-pulse"></span>
           </div>
         </div>
       </motion.div>
-
       <motion.h2
-        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-300"
+        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent
+                  bg-gradient-to-r from-slate-900 to-slate-600
+                  dark:bg-gradient-to-r dark:from-white dark:to-zinc-300"
         initial={ { opacity: 0, y: 20 } }
         whileInView={ { opacity: 1, y: 0 } }
         transition={ { duration: 0.5, delay: 0.2 } }
