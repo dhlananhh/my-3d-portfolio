@@ -1,9 +1,12 @@
 "use client"
+
 import { motion } from "framer-motion"
+
 interface SectionHeadingProps {
   title: string
   subtitle: string
 }
+
 export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
   return (
     <div className="text-center space-y-4">
@@ -21,7 +24,8 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
             <span className="relative z-10 text-foreground/80">
               { subtitle }
             </span>
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/20 via-cyan-500/20 to-blue-600/20 animate-pulse"></span>
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r
+            from-teal-400/20 via-cyan-500/20 to-blue-600/20 animate-pulse"></span>
           </div>
         </div>
       </motion.div>
