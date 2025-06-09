@@ -90,7 +90,7 @@ export const projectsData: Project[] = [
     tools: [ "Next.js", "TailwindCSS", "TypeScript", "Radix UI", "Shadcn UI" ],
     category: "Projects",
     projectStartDate: new Date("2025-01-11"),
-    projectStatus: "In Progress",
+    projectStatus: "Completed",
     liveDemoUrl: "https://my-3d-portfolio-wine.vercel.app/"
   },
 ];
