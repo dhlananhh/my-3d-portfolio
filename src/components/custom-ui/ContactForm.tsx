@@ -131,7 +131,7 @@ export default function ContactForm() {
           value={ name }
           onChange={ (e) => setName(e.target.value) }
           className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
-          placeholder="Your Name"
+          placeholder="Enter your full name"
         />
       </motion.div>
 
@@ -147,7 +147,7 @@ export default function ContactForm() {
           value={ email }
           onChange={ (e) => setEmail(e.target.value) }
           className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
-          placeholder="you@example.com"
+          placeholder="Enter your email address"
         />
       </motion.div>
 
@@ -179,7 +179,7 @@ export default function ContactForm() {
           value={ message }
           onChange={ (e) => setMessage(e.target.value) }
           className={ `${inputBaseClasses} ${inputBgFocusClasses}` }
-          placeholder="Your detailed message here..."
+          placeholder="Enter your message here"
         ></textarea>
       </motion.div>
 
