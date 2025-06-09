@@ -49,10 +49,10 @@ export default function ResumeSection() {
           <Button
             asChild
             size="lg"
-            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-lg px-6 py-3 text-center"
+            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-lg px-6 py-3 text-center"
           >
             <Link href={ resumeLink } target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center">
-              <Eye size={ 20 } className="mr-2" />
+              <Eye size={ 50 } className="mr-2" />
               View Online
             </Link>
           </Button>
