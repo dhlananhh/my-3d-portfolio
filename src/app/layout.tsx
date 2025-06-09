@@ -39,7 +39,6 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen flex-col
                         bg-gradient-to-br from-gray-100 via-slate-50 to-stone-100
-                        dark:from-gray-900 dark:via-gray-950 dark:to-black
                         transition-colors duration-300 text-foreground"
           >
             <Navbar />
