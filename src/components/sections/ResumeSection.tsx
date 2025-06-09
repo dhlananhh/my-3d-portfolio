@@ -35,7 +35,7 @@ export default function ResumeSection() {
           initial="hidden"
           whileInView="visible"
           viewport={ { once: true, amount: 0.5 } }
-          className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto"
+          className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto mt-10"
         >
           Take a look at my professional experience and skills. You can view it directly in your browser or download a PDF copy for your convenience.
         </motion.p>
