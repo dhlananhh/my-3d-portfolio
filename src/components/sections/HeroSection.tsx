@@ -12,11 +12,14 @@ import {
 } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const COLORS_TOP = [ "#13FFAA", "#1E67C6", "#CE84CF", "#DD335C" ];
 
 export default function HeroSection() {
   const color = useMotionValue(COLORS_TOP[ 0 ]);
+  const { theme } = useTheme();
+
   useEffect(() => {
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
@@ -34,7 +37,7 @@ export default function HeroSection() {
       style={ {
         backgroundImage,
       } }
-      className="relative grid min-h-screen place-content-center overflow-hidden px-4 py-24 text-gray-200"
+      className="relative grid min-h-screen place-content-center overflow-hidden px-4 py-24 text-foreground"
     >
       <div className="relative z-10 flex flex-col items-center text-center">
         <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 tracking-tight leading-tight">
@@ -46,7 +49,7 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <p className="my-6 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed text-gray-300">
+        <p className="my-6 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed text-muted-foreground">
           Passionate about creating dynamic websites and applications with modern frontend technology.
         </p>
 
@@ -69,10 +72,13 @@ export default function HeroSection() {
             asChild
             variant="outline"
             size="lg"
-            className="border-gray-400 text-gray-200 hover:text-white hover:bg-gray-700/50 focus:ring-4 focus:outline-none focus:ring-gray-600 font-medium rounded-lg text-lg px-6 py-3 text-center"
+            className="font-medium rounded-lg text-lg px-6 py-3 text-center"
             onClick={ (e) => {
               e.preventDefault();
-              document.querySelector("#contact")?.scrollIntoView({ behavior: 'smooth' });
+              const contactSection = document.querySelector("#contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
             } }
           >
             <Link href="#contact">Contact me</Link>
@@ -95,7 +101,7 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors p-2.5 sm:p-3"
+              className="rounded-full bg-foreground/10 hover:bg-foreground/20 text-current hover:text-current transition-colors p-2.5 sm:p-3"
             >
               <Github className="h-5 w-5 sm:h-6 sm:w-6" />
               <span className="sr-only">GitHub</span>
@@ -110,7 +116,7 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors p-2.5 sm:p-3"
+              className="rounded-full bg-foreground/10 hover:bg-foreground/20 text-current hover:text-current transition-colors p-2.5 sm:p-3"
             >
               <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
               <span className="sr-only">LinkedIn</span>
@@ -124,7 +130,7 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors p-2.5 sm:p-3"
+              className="rounded-full bg-foreground/10 hover:bg-foreground/20 text-current hover:text-current transition-colors p-2.5 sm:p-3"
             >
               <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
               <span className="sr-only">Email</span>
