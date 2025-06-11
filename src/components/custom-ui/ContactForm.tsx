@@ -216,8 +216,9 @@ export default function ContactForm() {
         <motion.div
           initial={ { opacity: 0, y: 10 } }
           animate={ { opacity: 1, y: 0 } }
-          className={ `mt-4 p-3 rounded-md text-sm flex items-center shadow ${formState.status === "success" ? "bg-green-500 bg-opacity-25 text-green-300 border border-green-500/50" :
-            formState.status === "error" ? "bg-red-500 bg-opacity-25 text-red-300 border border-red-500/50" : ""
+          className={ `mt-4 p-3 rounded-md text-sm flex items-center shadow
+            ${formState.status === "success" ? "bg-green-500 bg-opacity-25 text-green-300 border border-green-500/50" :
+              formState.status === "error" ? "bg-red-500 bg-opacity-25 text-red-300 border border-red-500/50" : ""
             }` }
         >
           { formState.status === "success" && <FiCheckCircle className="mr-2 h-5 w-5 flex-shrink-0" /> }
