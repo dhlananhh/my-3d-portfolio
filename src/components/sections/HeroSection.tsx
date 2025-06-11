@@ -49,7 +49,7 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <p className="my-6 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed text-muted-foreground">
+        <p className="my-6 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed text-muted-foreground text-white">
           Passionate about creating dynamic websites and applications with modern frontend technology.
         </p>
 
@@ -72,7 +72,7 @@ export default function HeroSection() {
             asChild
             variant="outline"
             size="lg"
-            className="font-medium rounded-lg text-lg px-6 py-3 text-center"
+            className="font-medium rounded-lg text-lg px-6 py-3 text-center hover:scale-105"
             onClick={ (e) => {
               e.preventDefault();
               const contactSection = document.querySelector("#contact");
@@ -101,7 +101,7 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-foreground/10 hover:bg-foreground/20 text-current hover:text-current transition-colors p-2.5 sm:p-3"
+              className="p-2.5 sm:p-3 rounded-full shadow-lg bg-gray-200 hover:bg-blue-300 transition-colors"
             >
               <Github className="h-5 w-5 sm:h-6 sm:w-6" />
               <span className="sr-only">GitHub</span>
@@ -116,7 +116,7 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-foreground/10 hover:bg-foreground/20 text-current hover:text-current transition-colors p-2.5 sm:p-3"
+              className="p-2.5 sm:p-3 rounded-full shadow-lg bg-gray-200 hover:bg-blue-300 transition-colors"
             >
               <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
               <span className="sr-only">LinkedIn</span>
@@ -130,7 +130,7 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-foreground/10 hover:bg-foreground/20 text-current hover:text-current transition-colors p-2.5 sm:p-3"
+              className="p-2.5 sm:p-3 rounded-full shadow-lg bg-gray-200 hover:bg-blue-300 transition-colors"
             >
               <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
               <span className="sr-only">Email</span>
