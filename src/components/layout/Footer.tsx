@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { IoChevronUpCircleSharp } from "react-icons/io5";
 
 export default function Footer() {
@@ -125,23 +125,29 @@ export default function Footer() {
 
       <div className="fixed bottom-4 left-4 z-40 flex flex-col space-y-2">
         <a
-          href="#"
-          className="p-2 bg-gray-800 rounded-full shadow-lg hover:bg-blue-900/30 transition-colors"
-          aria-label="GitHub"
+          href="https://github.com/dhlananhh"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="p-2 bg-gray-800 rounded-full shadow-lg hover:bg-cyan-500/30 transition-colors"
+          aria-label="Github Profile"
         >
           <Github className="h-5 w-5 text-gray-300" />
         </a>
         <a
-          href="#"
-          className="p-2 bg-gray-800 rounded-full shadow-lg hover:bg-blue-900/30 transition-colors"
-          aria-label="LinkedIn"
+          href="https://linkedin.com/in/dhlananh"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="p-2 bg-gray-800 rounded-full shadow-lg hover:bg-cyan-500/30 transition-colors"
+          aria-label="LinkedIn Profile"
         >
           <Linkedin className="h-5 w-5 text-gray-300" />
         </a>
         <a
-          href="#"
-          className="p-2 bg-gray-800 rounded-full shadow-lg dark:hover:bg-blue-900/30 transition-colors"
-          aria-label="Email"
+          href="mailto:dhlananh2309@gmail.com"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="p-2 bg-gray-800 rounded-full shadow-lg hover:bg-cyan-500/30 transition-colors"
+          aria-label="Send Email"
         >
           <Mail className="h-5 w-5 text-gray-300" />
         </a>
