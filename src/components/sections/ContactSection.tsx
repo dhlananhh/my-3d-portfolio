@@ -3,7 +3,7 @@
 import ContactForm from "@/components/custom-ui/ContactForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"; // Icons cho contact info
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 
 const contactDetails = [
