@@ -20,7 +20,7 @@ export function SkillBadge({ name, level }: SkillBadgeProps) {
         <div className="absolute -inset-1 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
         <div className="relative">
-          <div className="text-center mb-4 font-medium text-lg">{ name }</div>
+          <div className="text-center mb-4 font-medium text-lg text-white">{ name }</div>
 
           <div className="relative h-2.5 w-full bg-zinc-700 rounded-full overflow-hidden">
             <div

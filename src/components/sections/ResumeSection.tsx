@@ -35,7 +35,7 @@ export default function ResumeSection() {
           initial="hidden"
           whileInView="visible"
           viewport={ { once: true, amount: 0.5 } }
-          className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto"
+          className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto mt-10"
         >
           Take a look at my professional experience and skills. You can view it directly in your browser or download a PDF copy for your convenience.
         </motion.p>
@@ -49,10 +49,10 @@ export default function ResumeSection() {
           <Button
             asChild
             size="lg"
-            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-lg px-6 py-3 text-center"
+            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-lg px-6 py-3 text-center"
           >
             <Link href={ resumeLink } target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center">
-              <Eye size={ 20 } className="mr-2" />
+              <Eye size={ 50 } className="mr-2" />
               View Online
             </Link>
           </Button>
@@ -60,7 +60,7 @@ export default function ResumeSection() {
             asChild
             variant="outline"
             size="lg"
-            className="border-gray-400 text-gray-200 hover:text-white hover:bg-gray-700/50 focus:ring-4 focus:outline-none focus:ring-gray-600 font-medium rounded-lg text-lg px-6 py-3 text-center"
+            className="bg-gray-700/80 border-gray-400 text-gray-200 hover:text-white hover:bg-gray-800/50 focus:ring-4 focus:outline-none focus:ring-gray-600 font-medium rounded-lg text-lg px-6 py-3 text-center"
           >
             <Link href={ resumeLink } download={ resumeFilename } className="inline-flex items-center justify-center">
               <Download size={ 20 } className="mr-2" />

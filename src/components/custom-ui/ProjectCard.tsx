@@ -52,9 +52,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView="visible"
       viewport={ { once: true, amount: 0.2 } }
       custom={ index }
-      className={ `bg-gray-800 rounded-xl overflow-hidden shadow-xl transition-all duration-300 ease-in-out hover:shadow-teal-500/30 hover:scale-[1.02] flex flex-col` }
+      className={ `bg-gray-800 rounded-xl overflow-hidden shadow-xl transition-all duration-300
+        ease-in-out hover:shadow-teal-500/30 hover:scale-[1.02] flex flex-col` }
     >
-
       <div className="relative w-full h-56 sm:h-60">
         <Image
           src={ project.imageUrl || "/images/placeholder-project.png" }
@@ -94,7 +94,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         <div className="mb-4">
-          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-700 bg-teal-200">
+          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full
+          text-teal-700 bg-teal-200">
             { project.category }
           </span>
         </div>
@@ -113,15 +114,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           )) }
         </div>
 
-        {/* Links: GitHub, Live Demo, Details */ }
-        <div className="mt-auto pt-4 border-t border-gray-700 flex flex-col sm:flex-row sm:items-center gap-3">
+        <div className="mt-auto pt-4 border-t border-gray-700 flex flex-col
+        sm:flex-row sm:items-center gap-3">
           { project.githubUrl && (
             <Link
               href={ project.githubUrl }
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-center sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white
-              font-medium py-2 px-4 rounded-md transition-colors text-sm"
+              font-medium py-2 px-4 rounded-lg text-sm transform active:scale-95 transition-all
+              duration-150 ease-in-out"
             >
               <FaGithub size={ 16 } />
               View Code
@@ -132,24 +134,24 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={ project.liveDemoUrl }
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 rounded-lg text-md py-2 px-4 text-center font-medium
-              transition-colors bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+              className="flex-1 sm:text-left inline-flex items-center justify-center sm:justify-start
+              gap-2 rounded-lg text-sm py-2 px-4 text-center font-medium text-white
+              bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 transform
+              active:scale-95 transition-all duration-150 ease-in-out"
             >
               <FaExternalLinkAlt size={ 14 } />
               Live Demo
             </Link>
           ) }
-          { !project.githubUrl &&
-            !project.liveDemoUrl && (
-              <Link
-                href={ `/projects/${project.slug}` }
-                className="flex-1 sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 rounded-lg text-md py-2 px-4 text-center font-medium text-teal-400 hover:text-teal-300
-                transition-colors text-sm border border-teal-500 hover:bg-teal-500/10"
-              >
-                <LucideExternalLink size={ 16 } />
-                View Details
-              </Link>
-            ) }
+          { !project.githubUrl && !project.liveDemoUrl && (
+            <Link
+              href={ `/projects/${project.slug}` }
+              className="flex-1 sm:text-left inline-flex items-center justify-center sm:justify-start gap-2 rounded-lg text-sm py-2 px-4 text-center font-medium text-teal-400 hover:text-teal-300 transition-colors border border-teal-500 hover:bg-teal-500/10 transform active:scale-95"
+            >
+              <LucideExternalLink size={ 16 } />
+              View Details
+            </Link>
+          ) }
         </div>
       </div>
     </motion.div>

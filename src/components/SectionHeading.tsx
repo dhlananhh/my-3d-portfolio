@@ -17,15 +17,21 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
         viewport={ { once: true } }
       >
         <div className="inline-block">
-          <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-2">
-            <span className="relative z-10">{ subtitle }</span>
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/20 via-cyan-500/20 to-blue-600/20 animate-pulse"></span>
+          <div className="relative px-3 py-1 text-sm font-medium rounded-full
+                          bg-muted/70 backdrop-blur-sm
+                          border border-border mb-2"
+          >
+            <span className="relative z-10 text-foreground/80">
+              { subtitle }
+            </span>
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r
+            from-teal-400/20 via-cyan-500/20 to-blue-600/20 animate-pulse"></span>
           </div>
         </div>
       </motion.div>
-
       <motion.h2
-        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-300"
+        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent
+                  bg-gradient-to-r from-slate-900 to-slate-600 text-white"
         initial={ { opacity: 0, y: 20 } }
         whileInView={ { opacity: 1, y: 0 } }
         transition={ { duration: 0.5, delay: 0.2 } }
