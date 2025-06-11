@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-gray-100 uppercase tracking-wider mb-4">
               Services
             </h3>
             <ul className="space-y-2">
@@ -67,7 +67,7 @@ export default function Footer() {
                 <li key={ item }>
                   <Link
                     href="#"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-600 hover:text-blue-400 transition-colors"
                   >
                     { item }
                   </Link>
@@ -77,17 +77,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-gray-100 uppercase tracking-wider mb-4">
               Contact
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-center text-gray-600">
+              <li className="flex items-center text-gray-600 hover:text-blue-400 transition-colors">
                 <Mail className="h-4 w-4 mr-2" /> dhlananh2309@gmail.com
               </li>
-              <li className="flex items-center text-gray-600">
+              <li className="flex items-center text-gray-600 hover:text-blue-400 transition-colors">
                 <Github className="h-4 w-4 mr-2" /> github.com/dhlananhh
               </li>
-              <li className="flex items-center text-gray-600">
+              <li className="flex items-center text-gray-600 hover:text-blue-400 transition-colors">
                 <Linkedin className="h-4 w-4 mr-2" /> linkedin.com/in/dhlananh
               </li>
             </ul>
