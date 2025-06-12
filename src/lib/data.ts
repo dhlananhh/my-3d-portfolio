@@ -93,6 +93,32 @@ export const projectsData: Project[] = [
     projectStatus: "Completed",
     liveDemoUrl: "https://my-3d-portfolio-wine.vercel.app/"
   },
+  {
+    id: "6",
+    title: "RAG System with Gemini and MongoDB Atlas",
+    slug: "rag-system-with-gemini-and-mongodb-atlas",
+    shortDescription: "RAG (Retrieval-Augmented Generation) system using Google's Gemini for embeddings and text generation, with MongoDB Atlas serving as the vector database for efficient information storage and retrieval.",
+    description: "This project serves as one of my personal projects.",
+    imageUrl: "/images/my-portfolio-website-project.png",
+    githubUrl: "https://github.com/dhlananhh/Build_RAG_System_with_Gemini_and_MongoDB",
+    tools: [ "Python", "google-generativeai", "mongodb" ],
+    category: "Projects",
+    projectStartDate: new Date("2025-01-11"),
+    projectStatus: "Completed",
+  },
+  {
+    id: "7",
+    title: "RAG System with Gemini and ChromaDB",
+    slug: "rag-system-with-gemini-and-mongodb-atlas",
+    shortDescription: "RAG (Retrieval-Augmented Generation) system using Google's Gemini Flash model and the ChromaDB vector database to answer questions based on the content of a PDF document.",
+    description: "This project serves as one of my personal projects.",
+    imageUrl: "/images/my-portfolio-website-project.png",
+    githubUrl: "https://github.com/dhlananhh/Build_RAG_System_with_Gemini_and_ChromaDB",
+    tools: [ "Python", "google-generativeai", "chromadb" ],
+    category: "Projects",
+    projectStartDate: new Date("2025-01-11"),
+    projectStatus: "Completed",
+  },
 ];
 
 export const testimonialsData: Testimonial[] = [
