@@ -18,10 +18,10 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
       >
         <div className="inline-block">
           <div className="relative px-3 py-1 text-sm font-medium rounded-full
-                          bg-muted/70 backdrop-blur-sm
-                          border border-border mb-2"
+            bg-gradient-to-r from-teal-200/65 via-cyan-300/65 to-blue-400/65
+            backdrop-blur-sm border border-border mb-2"
           >
-            <span className="relative z-10 text-foreground/80">
+            <span className="relative z-10 text-foreground/80 text-gray-100">
               { subtitle }
             </span>
             <span className="absolute inset-0 rounded-full bg-gradient-to-r
