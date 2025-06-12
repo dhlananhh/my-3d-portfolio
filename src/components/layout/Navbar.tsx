@@ -36,12 +36,19 @@ export default function Navbar() {
           const sectionElement = document.getElementById(sectionId);
           if (sectionElement) {
             const rect = sectionElement.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-              currentSection = sectionId;
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
+              if (rect.top <= 100 && rect.bottom >= 100) { // Cụ thể hơn, cách top 100px
+                currentSection = sectionId;
+              } else if (!currentSection && rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                currentSection = sectionId;
+              }
             }
           }
         }
       });
+      if (window.scrollY < 50 && !currentSection) {
+        currentSection = "hero";
+      }
       setActiveSection(currentSection);
     };
 
@@ -67,10 +74,12 @@ export default function Navbar() {
   return (
     <nav
       className={ cn(
-        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out bg-slate-900/80",
-        isScrolled || isOpen
-          ? "bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-700/60"
-          : "border-b border-transparent"
+        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out",
+        "bg-slate-900/80",
+        (isScrolled || isOpen) &&
+        "bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-700/60",
+        !(isScrolled || isOpen) &&
+        "border-b border-transparent"
       ) }
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +105,7 @@ export default function Navbar() {
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
                   activeSection === item.href.substring(2)
                     ? "text-teal-300 bg-teal-500/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/70"
+                    : "text-slate-300 hover:text-white hover:bg-slate-700/50"
                 ) }
               >
                 { item.label }
@@ -108,7 +117,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={ toggleMenu }
-              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700/60 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
               aria-expanded={ isOpen }
               aria-label={ isOpen ? "Close menu" : "Open menu" }
             >
@@ -120,7 +129,12 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */ }
       { isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md shadow-lg border-t border-border/50">
+        <div
+          className={ cn(
+            "md:hidden absolute top-full left-0 w-full shadow-lg",
+            "bg-slate-900/90 backdrop-blur-xl border-t border-slate-700/60"
+          ) }
+        >
           <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
             { navItems.map((item) => (
               <Link
