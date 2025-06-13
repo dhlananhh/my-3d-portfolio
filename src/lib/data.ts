@@ -1,11 +1,9 @@
-import { Images } from "@/lib/images";
-
 export interface Project {
   id: string;
   title: string;
   description: string;
   shortDescription: string;
-  imageUrl: string | Object;
+  imageUrl: string;
   videoUrl?: string;
   githubUrl: string;
   tools: string[];
@@ -32,7 +30,7 @@ export const projectsData: Project[] = [
     slug: "ecommerce-website",
     shortDescription: "Online ecommerce website, with chatbot integration.",
     description: "This project serves as one of my personal projects.",
-    imageUrl: Images.EcommerceProject,
+    imageUrl: "/images/ecommerce-project.png",
     githubUrl: "https://github.com/dhlananhh/quickcart/",
     tools: [ "Next.js", "TailwindCSS", "Clerk", "MongoDB" ],
     category: "Projects",
@@ -46,7 +44,7 @@ export const projectsData: Project[] = [
     slug: "online-bookstore-project",
     shortDescription: "Online bookstore system, with chatbot integration.",
     description: "This project serves as a final report exam on software architecture. I am a member of this project, as a frontend coder, building and integrating chatbot into the bookstore system.",
-    imageUrl: Images.BookstoreProject,
+    imageUrl: "/images/bookstore-project.png",
     githubUrl: "https://github.com/minhlq2003/bookstore-frontend-nextjs",
     tools: [ "Next.js", "TailwindCSS", "TypeScript" ],
     category: "Projects",
@@ -60,7 +58,7 @@ export const projectsData: Project[] = [
     slug: "online-bookstore-project",
     shortDescription: "Online bookstore system, with chatbot integration.",
     description: "This project serves as a final report exam on software architecture. I am a member of this project, as a frontend coder, building and integrating chatbot into the bookstore system.",
-    imageUrl: Images.BookstoreProject,
+    imageUrl: "/images/bookstore-project.png",
     githubUrl: "https://github.com/HieuTrungMc/bookstore-backend-nodejs",
     tools: [ "Node.js", "Express.js", "Prisma", "MariaDB" ],
     category: "Projects",
@@ -73,7 +71,7 @@ export const projectsData: Project[] = [
     slug: "portfolio-website-project",
     shortDescription: "My Portfolio Website",
     description: "This project serves as one of my personal projects.",
-    imageUrl: Images.MyPortfolioWebsiteProject,
+    imageUrl: "/images/my-portfolio-website-project.png",
     githubUrl: "https://github.com/dhlananhh/my-3d-portfolio",
     tools: [ "Next.js", "TailwindCSS", "TypeScript", "Radix UI", "Shadcn UI" ],
     category: "Projects",
@@ -87,7 +85,7 @@ export const projectsData: Project[] = [
     slug: "rag-system-with-gemini-and-mongodb-atlas",
     shortDescription: "RAG (Retrieval-Augmented Generation) system using Google's Gemini for embeddings and text generation, with MongoDB Atlas serving as the vector database for efficient information storage and retrieval.",
     description: "This project serves as one of my personal projects.",
-    imageUrl: Images.RAG_System,
+    imageUrl: "/images/rag_system.png",
     githubUrl: "https://github.com/dhlananhh/Build_RAG_System_with_Gemini_and_MongoDB",
     tools: [ "Python", "google-generativeai", "mongodb" ],
     category: "Projects",
@@ -100,7 +98,7 @@ export const projectsData: Project[] = [
     slug: "rag-system-with-gemini-and-mongodb-atlas",
     shortDescription: "RAG (Retrieval-Augmented Generation) system using Google's Gemini Flash model and the ChromaDB vector database to answer questions based on the content of a PDF document.",
     description: "This project serves as one of my personal projects.",
-    imageUrl: Images.RAG_System,
+    imageUrl: "/images/rag_system.png",
     githubUrl: "https://github.com/dhlananhh/Build_RAG_System_with_Gemini_and_ChromaDB",
     tools: [ "Python", "google-generativeai", "chromadb" ],
     category: "Projects",
