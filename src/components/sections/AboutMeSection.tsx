@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import { GlassmorphicCard } from "@/components/custom-ui/GlassmorphicCard";
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Images } from "@/lib/images";
 
 const AboutMeSection = () => {
-  const profileImageUrl = "/images/profile-placeholder.png";
+  const profileImageUrl = Images.ProfilePlaceholder;
   const resumeUrl = "/resume/LanAnh_Frontend_CV.pdf";
 
   const imageContainerVariants = {
