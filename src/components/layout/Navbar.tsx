@@ -13,6 +13,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: "/#hero", label: "Home" },
   { href: "/#about", label: "About" },
+  { href: "/#goals", label: "Goals" },
   { href: "/#projects", label: "Projects" },
   { href: "/#skills", label: "Skills" },
   { href: "/#testimonials", label: "Testimonials" },
@@ -36,12 +37,8 @@ export default function Navbar() {
           const sectionElement = document.getElementById(sectionId);
           if (sectionElement) {
             const rect = sectionElement.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
-              if (rect.top <= 100 && rect.bottom >= 100) { // Cụ thể hơn, cách top 100px
-                currentSection = sectionId;
-              } else if (!currentSection && rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                currentSection = sectionId;
-              }
+            if (rect.top <= 100 && rect.bottom >= 100) {
+              currentSection = sectionId;
             }
           }
         }
@@ -69,7 +66,6 @@ export default function Navbar() {
     }
     setIsOpen(false);
   };
-
 
   return (
     <nav
